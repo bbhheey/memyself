@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bealene Villaflores – SaaS & Virtual Assistant Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B2A4A;--navy-deep:#111E35;--blush:#E8A598;--rose:#C8786A;
+  --gold:#C9A96E;--cream:#FAF7F4;--white:#FFFFFF;--text:#2C2C2C;
+  --muted:#6B7280;--light:#F3EBE8;
+  --fs:  'DM Sans',sans-serif;
+  --fsc: 'Dancing Script',cursive;
+  --fsd: 'Cormorant Garamond',serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fs);color:var(--text);background:var(--cream);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3rem;
+  background:rgba(17,30,53,0.96);backdrop-filter:blur(12px);
+}
+.nav-logo{font-family:var(--fsc);font-size:1.6rem;color:#fff}
+.nav-logo span{color:var(--blush)}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--blush)}
+.nav-hire{background:var(--blush);color:var(--navy);padding:.55rem 1.3rem;border-radius:2rem;font-weight:700;font-size:0.82rem;text-decoration:none;letter-spacing:.04em;transition:all .2s}
+.nav-hire:hover{background:var(--rose);color:#fff;transform:translateY(-1px)}
+
+/* ── HERO / COVER ── */
+.cover{
+  position:relative;min-height:100vh;
+  background:linear-gradient(135deg,#FAF7F4 0%,#F0E6E2 50%,#E8D9D5 100%);
+  display:flex;align-items:center;padding:7rem 3rem 4rem;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,120,106,.13) 0%,transparent 68%);
+  pointer-events:none;
+}
+.cover::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,42,74,.07) 0%,transparent 68%);
+  pointer-events:none;
+}
+
+/* banner strip */
+.cover-banner{
+  position:absolute;top:5rem;left:0;right:0;height:160px;
+  background:linear-gradient(135deg,var(--navy) 0%,#253d6b 60%,#1B2A4A 100%);
+  display:flex;align-items:center;padding:0 3rem;gap:1rem;overflow:hidden;
+}
+.banner-text-big{font-family:var(--fs);font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1.1}
+.banner-script{font-family:var(--fsc);font-size:1.4rem;color:var(--blush)}
+.banner-sub{font-size:.75rem;color:rgba(255,255,255,.65);line-height:1.6;max-width:340px}
+.banner-divider{width:1px;height:80px;background:rgba(255,255,255,.15);margin:0 1.5rem}
+.banner-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.bpill{background:rgba(255,255,255,.1);border:1px solid rgba(232,165,152,.35);border-radius:2rem;padding:.22rem .75rem;font-size:.7rem;color:rgba(255,255,255,.8);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+
+/* profile card */
+.profile-card{
+  position:relative;z-index:2;
+  margin-top:130px;
+  background:#fff;border-radius:1.4rem;
+  box-shadow:0 8px 40px rgba(0,0,0,.1);
+  padding:0 2.4rem 2.4rem;
+  max-width:820px;width:100%;
+}
+.avatar-wrap{
+  display:flex;align-items:flex-end;gap:1.4rem;
+  margin-top:-52px;margin-bottom:1.2rem;
+}
+.avatar{
+  width:110px;height:110px;border-radius:50%;
+  border:4px solid #fff;
+  box-shadow:0 4px 18px rgba(0,0,0,.15);
+  background:linear-gradient(135deg,var(--blush),var(--rose));
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.8rem;color:#fff;flex-shrink:0;overflow:hidden;
+  font-family:var(--fsd);font-weight:600;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.avatar-info{padding-bottom:.4rem}
+.open-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:linear-gradient(90deg,#2d7f3f,#38a250);
+  color:#fff;border-radius:2rem;
+  padding:.28rem .9rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;
+  margin-bottom:.5rem;
+}
+.open-badge::before{content:'●';font-size:.55rem}
+.profile-name{font-size:1.7rem;font-weight:800;color:var(--navy);line-height:1.1}
+.profile-pronoun{font-size:.85rem;color:var(--muted);font-weight:400;margin-left:.4rem}
+.profile-title{font-size:.88rem;color:var(--text);line-height:1.65;margin:.4rem 0 .3rem;max-width:600px}
+.profile-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.8rem;color:var(--muted);margin:.4rem 0}
+.profile-meta span{display:flex;align-items:center;gap:.3rem}
+.profile-stats{display:flex;gap:1.4rem;margin:.6rem 0 1.2rem}
+.stat{font-size:.83rem;color:var(--navy);font-weight:600;cursor:pointer;text-decoration:none}
+.stat:hover{color:var(--rose)}
+.stat span{color:var(--muted);font-weight:400}
+
+/* connect buttons */
+.connect-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+.btn-connect{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.6rem 1.3rem;border-radius:2rem;font-size:.83rem;font-weight:600;
+  cursor:pointer;text-decoration:none;border:none;font-family:var(--fs);
+  letter-spacing:.03em;transition:all .2s;
+}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep);transform:translateY(-1px)}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:#b5695c;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:#fff;transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#b8923d;transform:translateY(-1px)}
+
+/* ── LAYOUT ── */
+.main-layout{
+  max-width:1100px;margin:2rem auto;padding:0 1.5rem;
+  display:grid;grid-template-columns:1fr 320px;gap:1.8rem;
+  align-items:start;
+}
+
+/* ── CARDS ── */
+.card{
+  background:#fff;border-radius:1.2rem;
+  box-shadow:0 3px 16px rgba(0,0,0,.07);
+  padding:1.8rem 2rem;margin-bottom:1.5rem;
+  border:1.5px solid transparent;transition:border-color .2s,box-shadow .2s;
+}
+.card:hover{border-color:rgba(232,165,152,.3);box-shadow:0 6px 28px rgba(0,0,0,.1)}
+.card-title{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rose);font-weight:700;margin-bottom:1rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.card-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(200,120,106,.3),transparent)}
+
+/* ── ABOUT ── */
+.about-text{font-size:.93rem;color:var(--muted);line-height:1.78}
+.about-text strong{color:var(--rose);font-weight:600}
+
+/* ── EXPERIENCE ── */
+.exp-list{display:flex;flex-direction:column;gap:1.4rem}
+.exp-item{display:flex;gap:1rem;padding-bottom:1.4rem;border-bottom:1px solid #f0ece8}
+.exp-item:last-child{border-bottom:none;padding-bottom:0}
+.exp-logo{
+  width:46px;height:46px;border-radius:.6rem;flex-shrink:0;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:800;color:#fff;letter-spacing:.03em;text-align:center;
+  line-height:1.2;
+}
+.exp-logo.lg-rose{background:var(--rose)}
+.exp-logo.lg-green{background:#2d7f3f}
+.exp-logo.lg-orange{background:#E35D00}
+.exp-logo.lg-gray{background:#5A6472}
+.exp-logo.lg-dark{background:#1a1a2e}
+.exp-body{flex:1}
+.exp-role{font-weight:700;color:var(--navy);font-size:.95rem;margin-bottom:.15rem}
+.exp-company{font-size:.85rem;color:var(--text);font-weight:500}
+.exp-meta{font-size:.78rem;color:var(--muted);margin:.15rem 0 .4rem}
+.exp-desc{font-size:.83rem;color:var(--muted);line-height:1.65}
+.exp-skills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.skill-chip{
+  background:var(--light);color:var(--navy);
+  border-radius:2rem;padding:.18rem .7rem;
+  font-size:.7rem;font-weight:600;letter-spacing:.04em;
+  border:1px solid rgba(200,120,106,.2);
+}
+.current-badge{
+  display:inline-block;background:rgba(45,127,63,.12);color:#2d7f3f;
+  font-size:.68rem;font-weight:700;padding:.12rem .5rem;border-radius:2rem;
+  margin-left:.4rem;letter-spacing:.05em;
+}
+
+/* ── SKILLS GRID ── */
+.skills-grid{display:flex;flex-wrap:wrap;gap:.6rem}
+.skill-tag{
+  background:var(--cream);border:1.5px solid rgba(200,120,106,.25);
+  border-radius:.6rem;padding:.45rem 1rem;
+  font-size:.83rem;font-weight:500;color:var(--navy);
+  transition:all .2s;cursor:default;
+}
+.skill-tag:hover{background:var(--blush);color:#fff;border-color:var(--blush);transform:translateY(-1px)}
+.skill-tag.featured{
+  background:var(--navy);color:#fff;border-color:var(--navy);
+}
+.skill-tag.featured:hover{background:var(--rose);border-color:var(--rose)}
+
+/* ── EDUCATION ── */
+.edu-item{display:flex;gap:1rem;align-items:flex-start}
+.edu-logo{
+  width:46px;height:46px;border-radius:.6rem;flex-shrink:0;
+  background:var(--navy);display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:800;color:#fff;text-align:center;line-height:1.2;
+}
+.edu-school{font-weight:700;color:var(--navy);font-size:.93rem}
+.edu-degree{font-size:.85rem;color:var(--text)}
+.edu-year{font-size:.78rem;color:var(--muted);margin-top:.15rem}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.svc{
+  border:1.5px solid #EDE8E4;border-radius:.9rem;padding:1rem 1rem;
+  transition:all .2s;
+}
+.svc:hover{border-color:var(--blush);background:linear-gradient(135deg,#fff 0%,#FDF6F4 100%);transform:translateY(-2px)}
+.svc-icon{font-size:1.3rem;margin-bottom:.35rem}
+.svc h4{font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.svc p{font-size:.77rem;color:var(--muted);line-height:1.55}
+
+/* ── SIDEBAR ── */
+.sidebar-card{
+  background:#fff;border-radius:1.2rem;
+  box-shadow:0 3px 16px rgba(0,0,0,.07);
+  padding:1.5rem;margin-bottom:1.4rem;
+  border:1.5px solid transparent;transition:border-color .2s;
+}
+.sidebar-card:hover{border-color:rgba(232,165,152,.3)}
+.sidebar-title{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rose);font-weight:700;margin-bottom:1rem;
+}
+.link-btn{
+  display:flex;align-items:center;gap:.8rem;
+  padding:.75rem 1rem;border-radius:.8rem;
+  border:1.5px solid #EDE8E4;text-decoration:none;
+  margin-bottom:.7rem;transition:all .2s;background:#fff;
+}
+.link-btn:last-child{margin-bottom:0}
+.link-btn:hover{border-color:var(--blush);background:var(--light);transform:translateX(2px)}
+.link-icon{
+  width:36px;height:36px;border-radius:.6rem;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.li-navy{background:var(--navy)}
+.li-rose{background:var(--rose)}
+.li-green{background:#14a800}
+.li-gold{background:var(--gold)}
+.link-icon svg,.link-icon span{display:block}
+.link-text{flex:1}
+.link-label{font-weight:700;color:var(--navy);font-size:.85rem}
+.link-sub{font-size:.73rem;color:var(--muted)}
+.link-arrow{color:var(--muted);font-size:.8rem}
+
+/* quote card */
+.quote-card{
+  background:linear-gradient(135deg,var(--navy) 0%,#253d6b 100%);
+  border-radius:1.2rem;padding:1.5rem;color:#fff;
+  margin-bottom:1.4rem;text-align:center;
+}
+.quote-mark{font-family:var(--fsd);font-size:3rem;color:var(--blush);line-height:.8;margin-bottom:.4rem}
+.quote-text{font-size:.88rem;color:rgba(255,255,255,.82);line-height:1.65;font-style:italic}
+.quote-sig{font-family:var(--fsc);font-size:1.2rem;color:var(--blush);margin-top:.8rem}
+
+/* availability */
+.avail-card{
+  background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);
+  border:1.5px solid #6ee7b7;border-radius:1.2rem;
+  padding:1.2rem 1.5rem;margin-bottom:1.4rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.avail-dot{width:12px;height:12px;background:#10b981;border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.4)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.avail-text{font-size:.85rem;font-weight:600;color:#065f46}
+.avail-sub{font-size:.75rem;color:#047857}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--navy-deep);color:rgba(255,255,255,.55);
+  padding:2.5rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.footer-logo{font-family:var(--fsc);font-size:1.4rem;color:#fff}
+.footer-logo span{color:var(--blush)}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:1.2rem}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:var(--blush)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:.9rem 1.2rem}
+  .nav-links{display:none}
+  .cover{padding:6rem 1.2rem 2rem}
+  .cover-banner{padding:0 1.2rem;height:140px}
+  .banner-text-big{font-size:1.1rem}
+  .banner-sub,.banner-divider{display:none}
+  .profile-card{padding:0 1.2rem 1.6rem}
+  .main-layout{grid-template-columns:1fr;padding:0 1rem}
+  .services-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.2rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Bea<span>lene</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a href="#connect" class="nav-hire">Hire Me ♡</a>
+</nav>
+
+<!-- COVER + PROFILE -->
+<section class="cover" id="home">
+  <div class="cover-banner">
+    <div>
+      <div class="banner-text-big">SUPPORTING BUSINESSES.</div>
+      <div class="banner-script">Simplifying Success. ♡</div>
+    </div>
+    <div class="banner-divider"></div>
+    <div>
+      <div class="banner-sub">Great things happen when plans, passion, and support come together.</div>
+      <div class="banner-pills" style="margin-top:.6rem">
+        <span class="bpill">Organized</span>
+        <span class="bpill">Resourceful</span>
+        <span class="bpill">Proactive</span>
+        <span class="bpill">Results-Focused</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="avatar-wrap">
+      <div class="avatar">BV</div>
+      <div class="avatar-info">
+        <div class="open-badge">Open to Work</div>
+        <div class="profile-name">Bealene Villaflores <span class="profile-pronoun">She/Her</span></div>
+      </div>
+    </div>
+
+    <div class="profile-title">
+      SaaS Technical Support Specialist &nbsp;·&nbsp; Onboarding &amp; Data Migration &nbsp;·&nbsp;
+      Customer Success &amp; Technical Operations &nbsp;·&nbsp; Ops, Admin &amp; Email Support &nbsp;·&nbsp;
+      QA Tester (Manual &amp; Automation) &nbsp;·&nbsp; Virtual Assistant
+    </div>
+
+    <div class="profile-meta">
+      <span>🏢 Atticus Advisory Solutions Inc.</span>
+      <span>🎓 Laguna State Polytechnic University – San Pablo City</span>
+      <span>📍 San Pablo, Calabarzon, Philippines</span>
+      <span>🌐 Remote</span>
+    </div>
+
+    <div class="profile-stats">
+      <a class="stat" href="#">30 <span>followers</span></a>
+      <a class="stat" href="#">22 <span>connections</span></a>
+    </div>
+
+    <div class="connect-row" id="connect">
+      <a href="YOUR_CALENDLY_LINK" target="_blank" class="btn-connect btn-navy">📅 Book a Call</a>
+      <a href="https://www.linkedin.com/in/bealene-villaflores-568a7a208" target="_blank" class="btn-connect btn-ghost">in LinkedIn</a>
+      <a href="YOUR_UPWORK_LINK" target="_blank" class="btn-connect btn-gold">💼 Upwork Profile</a>
+      <a href="mailto:your@email.com" class="btn-connect btn-rose">✉️ Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="main-layout">
+  <div class="main-col">
+
+    <!-- ABOUT -->
+    <div class="card" id="about">
+      <div class="card-title">About</div>
+      <p class="about-text">
+        <strong>SaaS Technical Support · Customer Success · Admin &amp; Data Migration · Virtual Assistant · QA Tester (Manual &amp; Automation)</strong>
+      </p>
+      <br/>
+      <p class="about-text">
+        Helping businesses improve customer experiences through customer support, technical troubleshooting,
+        virtual assistance, QA testing, and email marketing support. Experienced with SaaS platforms,
+        eCommerce support, website testing, CRM tools, and administrative operations.
+        Passionate about delivering efficient solutions and exceptional service.
+      </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="card" id="experience">
+      <div class="card-title">Experience</div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-logo lg-green" style="font-size:.58rem">ATTICUS</div>
+          <div class="exp-body">
+            <div class="exp-role">Onboarding &amp; Migration Specialist (SaaS) at Kit <span class="current-badge">Current</span></div>
+            <div class="exp-company">Atticus Advisory Solutions Inc. · Full-time</div>
+            <div class="exp-meta">📅 Jul 2023 – Present · 3 yrs &nbsp;·&nbsp; 🌐 Philippines · Remote</div>
+            <div class="exp-desc">Guiding SaaS clients through onboarding and data migration workflows, ensuring smooth transitions and high customer satisfaction for Kit (formerly ConvertKit).</div>
+            <div class="exp-skills">
+              <span class="skill-chip">HTML</span>
+              <span class="skill-chip">HTML Emails</span>
+              <span class="skill-chip">CRM Tools</span>
+              <span class="skill-chip">Data Migration</span>
+              <span class="skill-chip">Customer Onboarding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo lg-dark" style="font-size:.75rem">UP</div>
+          <div class="exp-body">
+            <div class="exp-role">Software Quality Assurance Tester <span class="current-badge">Current</span></div>
+            <div class="exp-company">Upwork · Freelance</div>
+            <div class="exp-meta">📅 Jan 2021 – Present · 5 yrs 6 mos &nbsp;·&nbsp; 🌐 United States · Remote</div>
+            <div class="exp-desc">Manual and automation testing of web and mobile applications for US-based clients. Bug reporting, test case creation, and regression testing.</div>
+            <div class="exp-skills">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Agile Testing</span>
+              <span class="skill-chip">Selenium</span>
+              <span class="skill-chip">Test Automation</span>
+              <span class="skill-chip">Bug Reporting</span>
+              <span class="skill-chip">Manual Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo" style="font-size:.6rem">BRUNT WORK</div>
+          <div class="exp-body">
+            <div class="exp-role">Virtual Assistant</div>
+            <div class="exp-company">BruntWork · Full-time</div>
+            <div class="exp-meta">📅 Dec 2021 – Jan 2023 · 1 yr 2 mos &nbsp;·&nbsp; 🌐 Philippines · Remote</div>
+            <div class="exp-desc">Worked within an authorization team department providing virtual support, handling customer requests, and maintaining operational efficiency across departments.</div>
+            <div class="exp-skills">
+              <span class="skill-chip">Microsoft Office</span>
+              <span class="skill-chip">Customer Satisfaction</span>
+              <span class="skill-chip">Admin Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo lg-orange" style="font-size:.65rem">OPTUM</div>
+          <div class="exp-body">
+            <div class="exp-role">Customer Service Specialist</div>
+            <div class="exp-company">Optum · Full-time</div>
+            <div class="exp-meta">📅 May 2018 – Nov 2021 · 3 yrs 7 mos</div>
+            <div class="exp-desc">Handled inbound customer inquiries for healthcare services, providing technical support and resolving issues with empathy and accuracy.</div>
+            <div class="exp-skills">
+              <span class="skill-chip">Microsoft Office</span>
+              <span class="skill-chip">Customer Satisfaction</span>
+              <span class="skill-chip">Healthcare Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-logo lg-gray" style="font-size:.6rem">CONV</div>
+          <div class="exp-body">
+            <div class="exp-role">Customer Care Representative</div>
+            <div class="exp-company">Convergys · Full-time</div>
+            <div class="exp-meta">📅 Oct 2016 – Mar 2018 · 1 yr 6 mos &nbsp;·&nbsp; 📍 Santa Rosa, Laguna</div>
+            <div class="exp-desc">Front-line customer care support handling service inquiries, complaints, and technical troubleshooting for international clients.</div>
+            <div class="exp-skills">
+              <span class="skill-chip">Customer Care</span>
+              <span class="skill-chip">Technical Support</span>
+              <span class="skill-chip">Communication</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="card" id="skills">
+      <div class="card-title">Skills</div>
+      <div class="skills-grid">
+        <span class="skill-tag featured">Software as a Service (SaaS)</span>
+        <span class="skill-tag featured">QA Testing (Manual &amp; Auto)</span>
+        <span class="skill-tag featured">Customer Success</span>
+        <span class="skill-tag featured">Virtual Assistance</span>
+        <span class="skill-tag featured">Data Migration</span>
+        <span class="skill-tag">HTML &amp; HTML Emails</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Agile Methodology</span>
+        <span class="skill-tag">CRM Tools</span>
+        <span class="skill-tag">Email Marketing Support</span>
+        <span class="skill-tag">Technical Troubleshooting</span>
+        <span class="skill-tag">Admin &amp; Operations</span>
+        <span class="skill-tag">eCommerce Support</span>
+        <span class="skill-tag">Microsoft Office Suite</span>
+        <span class="skill-tag">Website Testing</span>
+        <span class="skill-tag">Onboarding Specialist</span>
+        <span class="skill-tag">Bug Reporting</span>
+        <span class="skill-tag">Selenium / Test Automation</span>
+        <span class="skill-tag">Client Communication</span>
+        <span class="skill-tag">Detail-Oriented</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="card" id="services">
+      <div class="card-title">Services I Offer</div>
+      <div class="services-grid">
+        <div class="svc"><div class="svc-icon">⚙️</div><h4>SaaS Onboarding Support</h4><p>Guide clients through platform setup, data migration, and seamless onboarding.</p></div>
+        <div class="svc"><div class="svc-icon">🔍</div><h4>QA Testing</h4><p>Manual and automated testing, bug reporting, and regression testing for web apps.</p></div>
+        <div class="svc"><div class="svc-icon">🎧</div><h4>Customer Success</h4><p>Handling support tickets, technical troubleshooting, and client relationship management.</p></div>
+        <div class="svc"><div class="svc-icon">📧</div><h4>Email &amp; Admin Support</h4><p>Inbox management, scheduling, data entry, and day-to-day operational support.</p></div>
+        <div class="svc"><div class="svc-icon">🛒</div><h4>eCommerce Support</h4><p>Order management, product listing, customer inquiries, and platform operations.</p></div>
+        <div class="svc"><div class="svc-icon">💻</div><h4>Virtual Assistance</h4><p>Flexible remote support tailored to your business needs and tools.</p></div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="card" id="education">
+      <div class="card-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-logo" style="font-size:.6rem;line-height:1.3">LSPU</div>
+        <div>
+          <div class="edu-school">Laguna State Polytechnic University – San Pablo City</div>
+          <div class="edu-degree">Bachelor's Degree</div>
+          <div class="edu-year">San Pablo City, Laguna, Philippines</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-col -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar-col">
+
+    <!-- Availability -->
+    <div class="avail-card">
+      <div class="avail-dot"></div>
+      <div>
+        <div class="avail-text">Available for Work</div>
+        <div class="avail-sub">Open to remote opportunities</div>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote-card">
+      <div class="quote-mark">❝</div>
+      <div class="quote-text">Great things happen when plans, passion, and support come together.</div>
+      <div class="quote-sig">Bealene ♡</div>
+    </div>
+
+    <!-- Connect Links -->
+    <div class="sidebar-card" id="connect-links">
+      <div class="sidebar-title">Connect &amp; Book</div>
+
+      <a href="YOUR_CALENDLY_LINK" target="_blank" class="link-btn">
+        <div class="link-icon li-navy" style="color:#fff;font-size:1.1rem">📅</div>
+        <div class="link-text">
+          <div class="link-label">Book a Call</div>
+          <div class="link-sub">Schedule via Calendly</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/bealene-villaflores-568a7a208" target="_blank" class="link-btn">
+        <div class="link-icon li-navy" style="color:#fff;font-weight:900;font-size:.9rem">in</div>
+        <div class="link-text">
+          <div class="link-label">LinkedIn</div>
+          <div class="link-sub">Bealene Villaflores</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="YOUR_UPWORK_LINK" target="_blank" class="link-btn">
+        <div class="link-icon li-green" style="color:#fff;font-weight:900;font-size:.9rem">Up</div>
+        <div class="link-text">
+          <div class="link-label">Upwork</div>
+          <div class="link-sub">Hire me on Upwork</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="mailto:your@email.com" class="link-btn">
+        <div class="link-icon li-rose" style="color:#fff;font-size:1.1rem">✉️</div>
+        <div class="link-text">
+          <div class="link-label">Email Me</div>
+          <div class="link-sub">your@email.com</div>
+        </div>
+        <span class="link-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Tagline pills -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">What I Bring</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+        <span class="skill-tag" style="font-size:.75rem">Detail-Oriented</span>
+        <span class="skill-tag" style="font-size:.75rem">Reliable</span>
+        <span class="skill-tag" style="font-size:.75rem">Solutions-Focused</span>
+        <span class="skill-tag" style="font-size:.75rem">Organized</span>
+        <span class="skill-tag" style="font-size:.75rem">Communicative</span>
+        <span class="skill-tag" style="font-size:.75rem">Proactive</span>
+        <span class="skill-tag" style="font-size:.75rem">Resourceful</span>
+        <span class="skill-tag" style="font-size:.75rem">Focused on Results</span>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">Location</div>
+      <p style="font-size:.85rem;color:var(--muted);line-height:1.7">
+        📍 San Pablo, Calabarzon, Philippines<br/>
+        🌐 Available for Remote Work Worldwide<br/>
+        🕐 Philippine Standard Time (PHT / UTC+8)
+      </p>
+    </div>
+
+  </div><!-- /sidebar -->
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bea<span>lene</span> Villaflores</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="YOUR_CALENDLY_LINK" target="_blank">Book a Call</a>
+  </div>
+  <div class="footer-copy">© 2026 Bealene Villaflores · All rights reserved</div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+    });
+  });
+</script>
+</body>
+</html>
